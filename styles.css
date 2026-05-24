@@ -64,9 +64,11 @@ html, body {
 /* ─── slide: a single page ───────────────────────────────── */
 .slide {
   position: absolute;
-  top: 50%; left: 50%;
+  /* Lifted up so the bottom navbar doesn't overlap slide content. */
+  top: calc(50% - 50px); left: 50%;
   width: min(1480px, 92vw);
-  height: min(840px, 88vh);
+  /* Reserve ~180px below for navbar + breathing room. */
+  height: min(820px, calc(100vh - 200px));
   aspect-ratio: 16 / 9;
   transform: translate(-50%, -50%) translateZ(-1200px) rotateY(-22deg);
   opacity: 0;

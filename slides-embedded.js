@@ -499,94 +499,79 @@ window.__SLIDES__ = [
       {
         "n": "T1-A",
         "t": "Formation & IP",
-        "d": "BiRAGAS, Inc. formed in Texas \u00b7 IP Contribution executed \u00b7 D&O insurance bound \u00b7 corporate records maintained."
+        "d": "BiRAGAS, Inc. formed under Texas law \u00b7 IP Contribution & Assignment executed \u00b7 D&O insurance bound \u00b7 corporate records maintained."
       },
       {
         "n": "T1-B",
         "t": "Quarterly Reports",
-        "d": "\u22653 of 4 quarterly written investor reports delivered on time during the Performance Period."
+        "d": "Quarterly written investor reports on or before each fiscal quarter-end; \u22653 of 4 delivered during the Performance Period."
       },
       {
         "n": "T1-C",
         "t": "Custody of the Platform",
-        "d": "No transfer, assignment, encumbrance, or material loss of BiRAGAS IP outside ordinary course."
+        "d": "No transfer, assignment, encumbrance, or material loss of BiRAGAS IP outside ordinary course; Company remains sole owner or exclusive licensee of the BiRAGAS platform."
       }
     ],
-    "narration": "Tier one. Corporate and governance. All three required. T1-A. BiRAGAS Incorporated validly formed in Texas. IP Contribution and Assignment executed. D and O insurance bound. Corporate records maintained. T1-B. At least three of four quarterly written investor reports delivered on time during the Performance Period. T1-C. No transfer, assignment, encumbrance, or material loss of BiRAGAS IP outside the ordinary course of business."
+    "narration": "Tier one. Corporate and governance. All three required. T1-A. BiRAGAS Incorporated validly formed under Texas law. The BiRAGAS IP Contribution and Assignment Agreement executed. D and O insurance bound. Customary corporate records maintained. T1-B. Quarterly written investor reports delivered on or before each fiscal quarter-end. Minimum of three of four quarterly reports delivered during the Performance Period. T1-C. No transfer, assignment, encumbrance, or material loss of the BiRAGAS IP outside the ordinary course of business. The Company remains the sole owner or exclusive licensee of the BiRAGAS platform."
   },
   {
     "id": "22",
     "kind": "tier-cover",
     "accent": "mulberry-soft",
     "title": "Tier 2 \u2014 Commercial & Pipeline",
-    "kicker": "\u2265 4 OF 6 required",
-    "headline": "Revenue, customers, partnerships, regulatory.",
-    "subhead": "The commercial proof points the market would expect from a Series-A-readiness check.",
+    "kicker": "AT LEAST 1 OF 4 required",
+    "headline": "Revenue. Customers. Deployments. Partnership.",
+    "subhead": "Any one of four commercial proof points satisfies the Tier-2 threshold.",
     "pillars": [
       {
         "n": "T2-1",
-        "t": "$1.5M Bookings",
-        "d": "Cumulative bookings from signed contracts. LOIs and non-binding term sheets do not count."
+        "t": "\u2265 $200K Bookings",
+        "d": "Cumulative bookings from signed customer contracts (subscription, license, or service). LOIs and non-binding term sheets do not count."
       },
       {
         "n": "T2-2",
-        "t": "\u2265 3 Paying Customers",
-        "d": "Signed contracts; at least 1 is an enterprise biopharma, CRO, or academic medical center."
+        "t": "\u2265 2 Paying Customers",
+        "d": "Under signed contract (pilot, license, or service); \u22651 enterprise biopharma, CRO, or academic medical center."
       },
       {
         "n": "T2-3",
-        "t": "\u2265 5 Deployments",
+        "t": "\u2265 2 Deployments",
         "d": "Production or paid pilot beyond founder-controlled environments."
       },
       {
         "n": "T2-4",
-        "t": "Tier-1 Partner",
-        "d": "\u2265 1 executed strategic partnership, JDA, or binding LOI with a \u2265 $1B-revenue pharma or dx."
-      },
-      {
-        "n": "T2-5",
-        "t": "FDA Pre-Sub",
-        "d": "\u2265 1 FDA Pre-Submission meeting requested and acknowledged, or equivalent Breakthrough/Qualified Pathway engagement."
-      },
-      {
-        "n": "T2-6",
-        "t": "Payer Engagement",
-        "d": "\u2265 1 coverage discussion, RFP response, or contract engagement with a payer, CMS, or government agency."
+        "t": "Partnership Anchor",
+        "d": "\u22651 executed strategic partnership, JDA, or binding LOI with a pharma or diagnostic with prior-year revenue \u2265 $20M."
       }
     ],
-    "narration": "Tier two. Commercial and pipeline. At least four of six required. T2-1, cumulative bookings of at least one-point-five million dollars from signed customer contracts \u2014 letters of intent and non-binding term sheets do not count. T2-2, at least three paying customers under signed contract, of which at least one is an enterprise biopharma, CRO, or academic medical center. T2-3, at least five executed BiRAGAS platform deployments beyond founder-controlled environments. T2-4, at least one executed strategic partnership, joint development agreement, or binding LOI with a pharmaceutical or diagnostic company with prior-year revenue of at least one billion dollars. T2-5, at least one FDA Pre-Submission meeting requested and acknowledged, or equivalent Breakthrough or Biomarker Qualification Pathway engagement. T2-6, at least one coverage discussion, RFP response, or contract engagement with a payer, CMS, or government agency."
+    "narration": "Tier two. Commercial and pipeline. At least one of four required. T2-1, cumulative bookings of at least two hundred thousand US dollars from signed customer contracts \u2014 subscription, license, or service. Letters of intent and non-binding term sheets do not count. T2-2, at least two paying customers under signed contract \u2014 pilot, license, or service \u2014 at least one of which is an enterprise biopharma, CRO, or academic medical center. T2-3, at least two executed BiRAGAS platform deployments \u2014 production or paid pilot \u2014 beyond founder-controlled environments. T2-4, at least one executed strategic partnership, joint development agreement, or binding letter of intent with a pharmaceutical or diagnostic company with prior-year revenue of at least twenty million US dollars."
   },
   {
     "id": "23",
     "kind": "tier-cover",
     "accent": "teal-soft",
     "title": "Tier 3 \u2014 Product, IP & Validation",
-    "kicker": "\u2265 2 OF 4 required",
-    "headline": "Build. Protect. Publish. Validate.",
-    "subhead": "Confirms we shipped real software, protected the moat, and earned third-party credibility.",
+    "kicker": "AT LEAST 1 OF 3 required",
+    "headline": "Build. Protect. Publish.",
+    "subhead": "Any one of three credibility milestones satisfies the Tier-3 threshold.",
     "pillars": [
       {
         "n": "T3-1",
         "t": "Modules in Production",
-        "d": "\u2265 20 of 28 BiRAGAS modules at production-ready status per the Module Readiness Specification."
+        "d": "\u2265 20 of 28 BiRAGAS modules at production-ready status per the Company's Module Readiness Specification (filed with quarterly reports)."
       },
       {
         "n": "T3-2",
         "t": "Patents Filed",
-        "d": "\u2265 5 patent applications filed (provisional or non-provisional) since the SAFE Effective Date."
+        "d": "\u2265 2 patent applications filed (provisional or non-provisional) covering BiRAGAS IP since the SAFE Effective Date."
       },
       {
         "n": "T3-3",
         "t": "Publication",
-        "d": "\u2265 1 peer-reviewed paper, pre-print, or regulatory dossier featuring BiRAGAS \u2014 accepted or submitted."
-      },
-      {
-        "n": "T3-4",
-        "t": "CLIA",
-        "d": "CLIA application filed, or a partnered CLIA laboratory secured under written agreement for \u2265 1 BiRAGAS-driven assay."
+        "d": "\u2265 1 peer-reviewed paper, pre-print, or regulatory dossier featuring the BiRAGAS platform \u2014 accepted or submitted to a recognized journal or agency."
       }
     ],
-    "narration": "Tier three. Product, intellectual property, and validation. At least two of four required. T3-1, at least twenty of the twenty-eight BiRAGAS modules at production-ready status, per the Module Readiness Specification filed with each quarterly report. T3-2, at least five patent applications filed \u2014 provisional or non-provisional \u2014 since the SAFE Effective Date. T3-3, at least one peer-reviewed publication, pre-print, or regulatory dossier featuring the BiRAGAS platform, accepted or submitted. T3-4, a CLIA application filed by the Company, or a partnered CLIA laboratory secured under written agreement for at least one BiRAGAS-driven assay."
+    "narration": "Tier three. Product, intellectual property, and validation. At least one of three required. T3-1, at least twenty of the twenty-eight BiRAGAS modules at production-ready status as defined in the Company's Module Readiness Specification, filed with each quarterly report. T3-2, at least two patent applications filed \u2014 provisional or non-provisional \u2014 covering BiRAGAS IP since the SAFE Effective Date. T3-3, at least one peer-reviewed publication, pre-print, or regulatory dossier featuring the BiRAGAS platform, accepted or submitted to a recognized journal or agency."
   },
   {
     "id": "24",

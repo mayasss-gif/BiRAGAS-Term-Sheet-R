@@ -451,6 +451,36 @@ async function init() {
   document.addEventListener("click", bump);
   bump();
 
+  // ─── TOUCH SWIPE NAVIGATION ────────────────────────────────
+  // Swipe left = next, swipe right = prev. Threshold 60px horizontal,
+  // and horizontal motion must exceed vertical by 1.5× to avoid
+  // triggering on accidental vertical scrolls.
+  const stage = document.querySelector(".stage");
+  let tStartX = 0, tStartY = 0, tStartT = 0, swiping = false;
+  stage.addEventListener("touchstart", (e) => {
+    if (e.touches.length !== 1) return;
+    const t = e.touches[0];
+    tStartX = t.clientX;
+    tStartY = t.clientY;
+    tStartT = Date.now();
+    swiping = true;
+  }, { passive: true });
+
+  stage.addEventListener("touchend", (e) => {
+    if (!swiping) return;
+    swiping = false;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - tStartX;
+    const dy = t.clientY - tStartY;
+    const dt = Date.now() - tStartT;
+    if (Math.abs(dx) < 60) return;            // too short
+    if (Math.abs(dx) < Math.abs(dy) * 1.5) return; // too vertical
+    if (dt > 800) return;                     // too slow (probably not a swipe)
+    unlockAudio();
+    if (dx < 0) next();
+    else        prev();
+  }, { passive: true });
+
   updateChrome();
 }
 

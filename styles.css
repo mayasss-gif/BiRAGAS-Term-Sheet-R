@@ -68,10 +68,11 @@ html, body {
      the navbar (no overlap possible). */
   top: 20px; left: 50%;
   width: min(1480px, 92vw);
-  /* Reserve 130px below for navbar + breathing room. */
+  /* Fill the available viewport height (minus 130px reserved for the
+     bottom navbar). No max-height cap so dense slides have room to
+     show their full content without forced scroll. */
   height: calc(100vh - 150px);
-  max-height: 820px;
-  aspect-ratio: 16 / 9;
+  /* aspect-ratio removed — height now drives the layout */
   transform: translate(-50%, 0) translateZ(-1200px) rotateY(-22deg);
   opacity: 0;
   pointer-events: none;
@@ -216,7 +217,7 @@ html, body {
 
 .slide .frame {
   position: absolute; inset: 0;
-  padding: 60px 80px;
+  padding: 40px 72px;
   display: grid;
   grid-template-rows: auto 1fr auto;
   z-index: 3;
@@ -244,21 +245,26 @@ html, body {
   display: grid;
   grid-template-columns: 1fr;
   align-items: start;
-  gap: 40px;
-  padding: 32px 0;
+  gap: 32px;
+  padding: 24px 0;
+  padding-right: 18px;  /* room for the scrollbar */
   min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(15,15,15,0.18) transparent;
+  scrollbar-width: auto;
+  scrollbar-color: rgba(15,15,15,0.32) rgba(15,15,15,0.04);
 }
-.content::-webkit-scrollbar { width: 6px; }
-.content::-webkit-scrollbar-track { background: transparent; }
-.content::-webkit-scrollbar-thumb {
-  background: rgba(15,15,15,0.18);
+.content::-webkit-scrollbar { width: 10px; }
+.content::-webkit-scrollbar-track {
+  background: rgba(15,15,15,0.04);
   border-radius: 999px;
 }
-.content::-webkit-scrollbar-thumb:hover { background: rgba(15,15,15,0.30); }
+.content::-webkit-scrollbar-thumb {
+  background: rgba(15,15,15,0.32);
+  border-radius: 999px;
+  border: 2px solid var(--bg-base);
+}
+.content::-webkit-scrollbar-thumb:hover { background: var(--accent-color); }
 
 /* Dark-accent slides get light-on-dark scrollbar */
 .slide[data-accent="ink"] .content,
@@ -326,8 +332,8 @@ html, body {
   font-family: "Fraunces", "Playfair Display", serif;
   font-style: italic;
   font-weight: 380;
-  font-size: clamp(40px, 4.6vw, 80px);
-  line-height: 0.95;
+  font-size: clamp(36px, 3.6vw, 64px);
+  line-height: 0.98;
   letter-spacing: -0.03em;
   color: var(--fg-primary);
 }
@@ -336,8 +342,8 @@ html, body {
   font-family: "Fraunces", serif;
   font-style: italic;
   font-weight: 380;
-  font-size: clamp(28px, 2.9vw, 50px);
-  line-height: 1.08;
+  font-size: clamp(24px, 2.2vw, 38px);
+  line-height: 1.12;
   letter-spacing: -0.018em;
   color: var(--fg-primary);
   max-width: 95%;
@@ -947,23 +953,23 @@ html, body {
 }
 .alloc-row {
   display: grid;
-  grid-template-columns: 110px 240px 1fr;
+  grid-template-columns: 96px 220px 1fr;
   align-items: baseline;
-  gap: 24px;
-  padding: 8px 0;
+  gap: 20px;
+  padding: 6px 0;
   border-bottom: 1px solid var(--hairline);
 }
 .alloc-pct {
   font-family: "Fraunces", serif;
   font-style: italic;
-  font-size: 32px;
+  font-size: 26px;
   color: var(--accent-color);
   line-height: 1;
   font-weight: 380;
 }
 .alloc-pct small {
   font-family: "DM Mono", monospace;
-  font-size: 14px;
+  font-size: 12px;
   letter-spacing: 0.18em;
   margin-left: 4px;
   color: var(--fg-mute);
@@ -971,13 +977,13 @@ html, body {
 .alloc-k {
   font-family: "Fraunces", serif;
   font-style: italic;
-  font-size: 22px;
+  font-size: 18px;
   color: var(--ink);
 }
 .alloc-d {
   font-family: "DM Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 0.22em;
+  font-size: 10px;
+  letter-spacing: 0.20em;
   text-transform: uppercase;
   color: var(--fg-mute);
 }
@@ -1025,28 +1031,28 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 0;
-  margin-top: 24px;
+  margin-top: 18px;
   border-top: 1px solid var(--rule-color);
 }
 .round-row {
   display: grid;
-  grid-template-columns: 320px 1fr;
-  padding: 12px 0;
+  grid-template-columns: 280px 1fr;
+  padding: 8px 0;
   border-bottom: 1px solid var(--rule-color);
   align-items: baseline;
-  gap: 24px;
+  gap: 20px;
 }
 .round-k {
   font-family: "DM Mono", monospace;
-  font-size: 12px;
-  letter-spacing: 0.24em;
+  font-size: 11px;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--fg-mute);
   font-weight: 500;
 }
 .round-v {
   font-family: "Newsreader", serif;
-  font-size: 19px;
+  font-size: 16px;
   color: var(--fg-primary);
   font-style: italic;
 }

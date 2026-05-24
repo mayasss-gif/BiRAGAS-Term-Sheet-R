@@ -220,6 +220,7 @@ html, body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   z-index: 3;
+  min-height: 0;     /* allow children to honor overflow */
 }
 
 /* folio header */
@@ -238,24 +239,78 @@ html, body {
 .folio .brand { color: var(--accent-color); font-weight: 600; }
 .folio .right { color: var(--fg-mute); }
 
-/* main content area */
+/* main content area — scrollable when content overflows */
 .content {
   display: grid;
   grid-template-columns: 1fr;
-  align-items: center;
+  align-items: start;
   gap: 40px;
-  padding: 40px 0;
+  padding: 32px 0;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(15,15,15,0.18) transparent;
+}
+.content::-webkit-scrollbar { width: 6px; }
+.content::-webkit-scrollbar-track { background: transparent; }
+.content::-webkit-scrollbar-thumb {
+  background: rgba(15,15,15,0.18);
+  border-radius: 999px;
+}
+.content::-webkit-scrollbar-thumb:hover { background: rgba(15,15,15,0.30); }
+
+/* Dark-accent slides get light-on-dark scrollbar */
+.slide[data-accent="ink"] .content,
+.slide[data-accent="ink-finale"] .content {
+  scrollbar-color: rgba(244,239,231,0.20) transparent;
+}
+.slide[data-accent="ink"] .content::-webkit-scrollbar-thumb,
+.slide[data-accent="ink-finale"] .content::-webkit-scrollbar-thumb {
+  background: rgba(244,239,231,0.22);
+}
+
+/* Subtle fade hint that more content sits below the visible area */
+.frame::after {
+  content: "";
+  position: absolute;
+  left: 80px; right: 80px;
+  bottom: 60px;   /* sits just above the .foot row */
+  height: 24px;
+  background: linear-gradient(180deg, transparent 0%, var(--bg-base) 100%);
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0.65;
 }
 
 .slide.has-screen .content {
   grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
 }
 
 .copy {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 28px;
+}
+
+/* Centered slides (cover, ask, hero, mae) keep their vertical centering */
+.slide[data-kind="cover"] .copy,
+.slide[data-kind="ask"] .copy,
+.slide[data-kind="hero"] .copy,
+.slide[data-kind="mae"] .copy,
+.slide[data-kind="tier-detail"] .copy {
+  justify-content: center;
+  min-height: 100%;
+}
+
+.slide[data-kind="cover"] .content,
+.slide[data-kind="ask"] .content,
+.slide[data-kind="hero"] .content,
+.slide[data-kind="mae"] .content,
+.slide[data-kind="tier-detail"] .content {
+  align-items: stretch;
 }
 
 .kicker {
@@ -1073,8 +1128,15 @@ html, body {
   .slide .frame {
     padding: 22px 22px 24px;
     grid-template-rows: auto 1fr auto;
-    overflow-y: auto;
+  }
+  .slide .frame::after {
+    left: 22px; right: 22px;
+    bottom: 50px;
+    height: 18px;
+  }
+  .content {
     -webkit-overflow-scrolling: touch;
+    padding: 18px 0;
   }
 
   /* Folio + foot — compact + condensed text */
